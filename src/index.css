@@ -88,9 +88,9 @@ img {
 
 /* Ratina campaign home: preserve the existing blue, ivory and wordmark while
    borrowing the reference's framed editorial layout and checker detail. */
-.home-campaign { background:#1D5BA8; padding:34px 0 82px; color:#F9F5EC; }
-.campaign-shell { max-width:1320px; margin:0 auto; padding:0 28px; }
-.campaign-hero { min-height:690px; height:min(74vw,820px); max-height:820px; position:relative; overflow:hidden; isolation:isolate; background:#78a9d1; }
+.home-campaign { background:#1D5BA8; padding:0; color:#F9F5EC; }
+.campaign-shell { max-width:none; width:100%; margin:0; padding:0; }
+.campaign-hero { min-height:100vh; height:100vh; max-height:none; position:relative; overflow:hidden; isolation:isolate; background:#78a9d1; }
 .campaign-food { position:absolute; inset:0; z-index:-2; width:100%; height:100%; max-width:none; object-fit:cover; object-position:center 54%; }
 .campaign-wash { position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(21,79,159,.76) 0%,rgba(29,91,168,.42) 44%,rgba(24,70,133,.08) 100%),linear-gradient(0deg,rgba(16,58,134,.28),transparent 55%); }
 .campaign-topline { position:absolute; inset:22px 28px auto; display:flex; justify-content:space-between; gap:12px; color:white; font-size:10px; font-weight:700; letter-spacing:.18em; }
@@ -129,9 +129,9 @@ img {
 .card-index { position:absolute; top:16px; left:16px; padding:8px 10px; background:#1D5BA8; }
 
 @media (max-width:700px) {
-  .home-campaign { padding:14px 0 54px; }
-  .campaign-shell { padding:0 12px; }
-  .campaign-hero { min-height:660px; height:calc(100svh - 90px); max-height:760px; }
+  .home-campaign { padding:0; }
+  .campaign-shell { padding:0; }
+  .campaign-hero { min-height:100vh; height:100vh; max-height:none; }
   .campaign-food { object-position:58% center; }
   .campaign-wash { background:linear-gradient(90deg,#17488bd9 0%,#17488b88 55%,#17488b22 100%),linear-gradient(0deg,#17488b88,transparent 70%); }
   .campaign-topline { inset:14px 14px auto; font-size:8px; letter-spacing:.09em; }
