@@ -24,24 +24,6 @@ const navItems = [
   { label: 'Contact', to: '/contact' },
 ]
 
-const philosophyBlocks = [
-  {
-    title: 'TIME-HONOURED TECHNIQUES',
-    text:
-      'We begin with slow, considered preparation and a respect for craft, letting dough, heat and timing do the work that great pizza deserves.',
-  },
-  {
-    title: 'QUALITY INGREDIENTS',
-    text:
-      'Our approach starts with carefully selected ingredients and a simple belief: better inputs create a more memorable table.',
-  },
-  {
-    title: 'FOOD WORTH SHARING',
-    text:
-      'Good food brings people together. We make room for conversation, warmth and the pleasure of eating well together.',
-  },
-]
-
 const previewMenu = menuItems.slice(0, 3)
 
 function BrandPattern({ className = '', variant = 'blue' }: { className?: string; variant?: 'blue' | 'ivory' }) {
@@ -83,7 +65,7 @@ function AppLayout() {
 
   return (
     <div className="min-h-screen bg-warmIvory text-charcoal">
-      <header className="sticky top-0 z-50 border-b border-white/15 bg-fornoBlue/95 text-white backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-white/15" style={{ background: '#fcf5e9', color: '#1D5BA8' }}>
         <div className="section-shell flex items-center justify-between py-4">
           <Link to="/" className="flex items-center gap-3" aria-label="Ratina Forno home">
             <img src={logoUrl} alt="Ratina Forno logo" className="h-12 w-auto" />
@@ -97,7 +79,7 @@ function AppLayout() {
                 end={item.to === '/'}
                 className={({ isActive }) =>
                   `font-sans text-sm font-semibold tracking-[0.18em] uppercase transition-colors ${
-                    isActive ? 'text-warmIvory' : 'text-white/85 hover:text-white'
+                    isActive ? 'text-[#1D5BA8]' : 'text-[#1D5BA8] hover:text-[#1D5BA8]'
                   }`
                 }
               >
@@ -117,7 +99,7 @@ function AppLayout() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 bg-fornoBlue text-white lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#1D5BA8]/35 bg-[#fcf5e9] text-[#1D5BA8] lg:hidden"
             aria-label="Toggle menu"
             onClick={() => setMobileOpen((open) => !open)}
           >
@@ -132,7 +114,7 @@ function AppLayout() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="overflow-hidden border-t border-white/15 bg-fornoBlue lg:hidden"
+              className="overflow-hidden border-t border-[#1D5BA8]/15 bg-[#fcf5e9] lg:hidden"
             >
               <div className="section-shell flex flex-col gap-4 py-5">
                 {navItems.map((item) => (
@@ -143,7 +125,7 @@ function AppLayout() {
                     onClick={() => setMobileOpen(false)}
                     className={({ isActive }) =>
                       `font-sans text-sm font-semibold uppercase tracking-[0.18em] ${
-                        isActive ? 'text-warmIvory' : 'text-white/85'
+                        isActive ? 'text-[#1D5BA8]' : 'text-[#1D5BA8]'
                       }`
                     }
                   >
@@ -152,7 +134,7 @@ function AppLayout() {
                 ))}
                 <Link
                   to="/contact"
-                  className="inline-flex w-fit items-center gap-2 rounded-full bg-fornoBlue px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-white"
+                  className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-[#1D5BA8]"
                 >
                   Order now
                 </Link>
