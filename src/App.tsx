@@ -91,7 +91,7 @@ function AppLayout() {
           <div className="hidden items-center gap-3 lg:flex">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-white px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-fornoBlue transition hover:bg-warmIvory"
+              className="inline-flex items-center gap-2 rounded-full border border-[#1D5BA8] bg-[#1D5BA8] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-[#fcf5e9] transition hover:bg-[#1D5BA8]"
             >
               Order now
             </Link>
