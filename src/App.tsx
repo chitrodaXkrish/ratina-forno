@@ -165,16 +165,12 @@ function HomePage() {
         <section className="campaign-hero">
           <img className="campaign-food" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=90" alt="Freshly baked Ratina Forno pizza topped with basil" />
           <div className="campaign-wash" />
-          <div className="campaign-topline"><span>RATINA FORNO · EST. WITH FIRE</span><span>CRAFT · INGREDIENTS · GOOD COMPANY</span></div>
           <div className="campaign-copy">
             <p>Authentic food. Honest ingredients.</p>
-            <h1>GOOD<br />DOUGH.<br /><span>GOOD FIRE.</span></h1>
+            <h1><span className="campaign-headline-line">GOOD DOUGH.</span><span>GOOD FIRE.</span></h1>
             <div className="campaign-subtitle">MADE FOR<br />SHARING</div>
             <Link to="/menu" className="campaign-order">Explore the menu <ArrowUpRight size={18} /></Link>
           </div>
-          <img src={logoUrl} alt="Ratina Forno" className="campaign-logo" />
-          <div className="campaign-caption">Slow made. Fire finished.<br />Always worth gathering for.</div>
-          <div className="campaign-stamp">FRESH<br />FROM<br />THE FORNO</div>
           <div className="checker" aria-hidden="true" />
         </section>
         <section className="campaign-story" id="philosophy">

@@ -15,8 +15,8 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-01',
     category: 'Pizzas',
-    name: 'Placeholder Pizza 01',
-    description: 'Sample placeholder item for the Ratina menu. Replace this copy with your final product description.',
+    name: 'Margherita Classica',
+    description: 'San Marzano tomato, creamy mozzarella, basil and a drizzle of extra virgin olive oil.',
     price: 'Price placeholder',
     image:
       'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80',
@@ -24,17 +24,17 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-02',
     category: 'Pizzas',
-    name: 'Placeholder Pizza 02',
-    description: 'Use this card to add a signature pizza, a seasonal offering, or a house favourite when the menu is finalised.',
+    name: 'Soppressata Piccante',
+    description: 'Tomato, mozzarella, spicy soppressata, roasted peppers and a touch of honey.',
     price: 'Price placeholder',
     image:
-      'https://images.unsplash.com/photo-1548365328-9f547fb9587c?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'pizza-03',
     category: 'Pizzas',
-    name: 'Placeholder Pizza 03',
-    description: 'A clean placeholder layout designed to be swapped for the final product list without changing the overall structure.',
+    name: 'Funghi e Tartufo',
+    description: 'Roasted mushrooms, mozzarella, parmesan and fragrant truffle oil.',
     price: 'Price placeholder',
     image:
       'https://images.unsplash.com/photo-1552539618-7eec9b4d1796?auto=format&fit=crop&w=900&q=80',
