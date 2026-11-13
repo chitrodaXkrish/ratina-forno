@@ -7,9 +7,12 @@ export type MenuCategory =
   | 'Dessert'
   | 'Beverages / Whole Day'
 
+export type MenuDietary = 'Veg' | 'Non-Veg'
+
 export interface MenuItem {
   id: string
   category: MenuCategory
+  dietary: MenuDietary
   name: string
   description: string
   price: string
@@ -40,6 +43,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-01',
     category: 'Pizza',
+    dietary: 'Veg',
     name: 'Buratta Pizza',
     description: 'Tomato Sauce, Mozzarela, Buratta, Rocket Leaves, Basil Pesto, Parmesan',
     price: '₹525',
@@ -48,6 +52,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-02',
     category: 'Pizza',
+    dietary: 'Veg',
     name: 'Four Cheese Pizza',
     description: 'White Sauce, Mozzarela, Parmesan, Cheddar, Cream Cheese, Spring Onion',
     price: '₹410',
@@ -56,6 +61,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-03',
     category: 'Pizza',
+    dietary: 'Veg',
     name: 'Truffle Mushroom Pizza',
     description: 'White Sauce, Wild Mushroom, Truffle Paste, Mozzarela, Spring Onion, Jalapeno',
     price: '₹590',
@@ -64,6 +70,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-04',
     category: 'Pizza',
+    dietary: 'Veg',
     name: 'Paneer Tikka Pizza',
     description: 'White Sauce, Marinated Paneer, Roasted Veg, Mozzarella, Herb Sauce',
     price: '₹410',
@@ -72,6 +79,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-05',
     category: 'Pizza',
+    dietary: 'Non-Veg',
     name: 'Chicken Tikka Pizza',
     description: 'White Sauce, Marinated Chicken, Roasted Veg, Mozzarella, Herb Sauce',
     price: '₹410',
@@ -80,6 +88,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-06',
     category: 'Pizza',
+    dietary: 'Non-Veg',
     name: 'Buffalo Chicken Pizza',
     description: 'White Sauce, Chicken W Buff Sauce, Roasted Veg, Mozzarela',
     price: '₹450',
@@ -88,6 +97,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-07',
     category: 'Pizza',
+    dietary: 'Non-Veg',
     name: 'Pepproni Pizza',
     description: 'Tomato Sauce, Mozzarela, Pepproni, Hot Chilli Oil, Jalapeno',
     price: '₹450',
@@ -96,6 +106,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'pizza-08',
     category: 'Pizza',
+    dietary: 'Veg',
     name: 'Margherita Pizza',
     description: 'Tomato Sauce, Mozzarela, Sundried Tomato, Basil Fresh',
     price: '₹310',
@@ -104,6 +115,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'bread-01',
     category: 'Between The Breads',
+    dietary: 'Veg',
     name: 'Cheesy Garlic Bread',
     description: 'Fresh Garlic, Parmesan, Mozzerella, Served With Herb Butter',
     price: '₹290',
@@ -112,6 +124,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'bread-02',
     category: 'Between The Breads',
+    dietary: 'Veg',
     name: 'Roasted Cheese Sandwich',
     description: 'Mix Cheese, Served With Herb Roasted Potato',
     price: '₹295',
@@ -120,6 +133,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'bread-03',
     category: 'Between The Breads',
+    dietary: 'Non-Veg',
     name: 'Chicken Pitta Pocket',
     description: 'Grilled Chicken, Romaine, Chilli Pesto',
     price: '₹280',
@@ -128,6 +142,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'bread-04',
     category: 'Between The Breads',
+    dietary: 'Non-Veg',
     name: 'Chicken Half Moon',
     description: 'Chicken Grilled, Romaine, Garlic Chilli Yogurt, Herb Sauce',
     price: '₹335',
@@ -136,6 +151,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'bread-05',
     category: 'Between The Breads',
+    dietary: 'Veg',
     name: 'Tomato Mozzarela',
     description: 'Basil Pesto, Sliced Mozzarela, Cherry Tomato, Parmesan',
     price: '₹310',
@@ -144,6 +160,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'salad-01',
     category: 'Salads / Whole Day',
+    dietary: 'Non-Veg',
     name: 'Smoked Chicken Ceasar',
     description: 'Ice Berge, Romaine, Dressing, Smoked Chicken, Crispy Bread, Parmesan Shavings',
     price: '₹240',
@@ -152,6 +169,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'salad-02',
     category: 'Salads / Whole Day',
+    dietary: 'Veg',
     name: 'Kale Quinoa',
     description: 'Kale Leaves, Try Quinoa, Mix Nuts, Sweet Lime Dressing',
     price: '₹340',
@@ -160,6 +178,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'salad-03',
     category: 'Salads / Whole Day',
+    dietary: 'Non-Veg',
     name: 'Avocado Chicken Bowl',
     description: 'Avocado, Grilled Chicken, Cherry Tomato, Pesto',
     price: '₹360',
@@ -168,6 +187,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'salad-04',
     category: 'Salads / Whole Day',
+    dietary: 'Veg',
     name: 'Buratta',
     description: 'Red Grapes, Cherry Tomato, Basil Pesto, Buratta, Rocket Leaves, Balsamic Glaze, Walnuts',
     price: '₹350',
@@ -176,6 +196,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'main-01',
     category: 'Main Course',
+    dietary: 'Veg',
     name: 'Fusilli With Tomato',
     description: 'Creamy Tomato Sauce, Parmesan Cheese',
     price: '₹390',
@@ -184,6 +205,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'main-02',
     category: 'Main Course',
+    dietary: 'Veg',
     name: 'Pesto Linguine',
     description: 'Basil Pesto, Roasted Almond Flakes, Parmesan',
     price: '₹430',
@@ -192,6 +214,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'main-03',
     category: 'Main Course',
+    dietary: 'Non-Veg',
     name: 'Chicken Meat Balls',
     description: 'Herby Chicken Balls Cooked In Tomato Sauce Served With 2 Pcs Of Pita',
     price: '₹490',
@@ -200,6 +223,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'main-04',
     category: 'Main Course',
+    dietary: 'Non-Veg',
     name: 'Grilled Chicken With Mashed Potato',
     description: 'Marinated Chicken Breast Cooked In Mustard Sauce And Served With Mashed Potato',
     price: '₹390',
@@ -208,6 +232,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'main-05',
     category: 'Main Course',
+    dietary: 'Veg',
     name: 'Sundried Tomato Mascarpone',
     description: 'Sundried Tomato Pesto, Orecchiette, Mascarpone',
     price: '₹460',
@@ -216,6 +241,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'main-06',
     category: 'Main Course',
+    dietary: 'Non-Veg',
     name: 'Fusilli Alfredo',
     description: 'Mushroom, Chicken, Parmesan',
     price: '₹455',
@@ -224,6 +250,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'main-07',
     category: 'Main Course',
+    dietary: 'Non-Veg',
     name: 'Linguine',
     description: 'Chicken Thigh Boneless, Mushroom, Green Peas',
     price: '₹465',
@@ -232,6 +259,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'main-08',
     category: 'Main Course',
+    dietary: 'Non-Veg',
     name: 'Chicken Bolognese',
     description: 'Chicken Mince Cooked In Tomato Sauce',
     price: '₹450',
@@ -240,6 +268,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'main-09',
     category: 'Main Course',
+    dietary: 'Non-Veg',
     name: 'Grilled Chicken With Roasted Potato',
     description: 'Smokey Grilled Chicken, Mushroom Sauce, Roasted Herb Potato',
     price: '₹410',
@@ -248,6 +277,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'side-01',
     category: 'Sides',
+    dietary: 'Veg',
     name: 'Pitta Bread 2pcs',
     description: 'No description provided',
     price: '₹95',
@@ -256,6 +286,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'side-02',
     category: 'Sides',
+    dietary: 'Non-Veg',
     name: 'Grilled Chicken',
     description: 'No description provided',
     price: '₹145',
@@ -264,6 +295,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'side-03',
     category: 'Sides',
+    dietary: 'Veg',
     name: 'Roasted Potato',
     description: 'No description provided',
     price: '₹120',
@@ -272,6 +304,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'side-04',
     category: 'Sides',
+    dietary: 'Veg',
     name: 'Fresh Garlic Bread',
     description: 'No description provided',
     price: '₹180',
@@ -280,6 +313,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'side-05',
     category: 'Sides',
+    dietary: 'Veg',
     name: 'Mashed Potato',
     description: 'No description provided',
     price: '₹130',
@@ -288,6 +322,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'dessert-01',
     category: 'Dessert',
+    dietary: 'Non-Veg',
     name: 'Tiramisu',
     description: 'Coffee Sponge, Mascarpone Cheese, Egg, Coffee Powder',
     price: '₹430',
@@ -296,6 +331,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'dessert-02',
     category: 'Dessert',
+    dietary: 'Veg',
     name: 'Pancake',
     description: 'Served With Nutella And Maple Syrup',
     price: '₹360',
@@ -304,6 +340,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'beverage-01',
     category: 'Beverages / Whole Day',
+    dietary: 'Veg',
     name: 'Cold Coffee',
     description: 'Filtered Coffee, Sweet Milk, Caramel Sauce, Whipping Cream',
     price: '₹190',
@@ -312,6 +349,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'beverage-02',
     category: 'Beverages / Whole Day',
+    dietary: 'Veg',
     name: 'Cold Biscoff',
     description: 'Biscoff, Fresh Milk, Whipping Cream, Biscoff Powder',
     price: '₹260',
@@ -320,6 +358,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'beverage-03',
     category: 'Beverages / Whole Day',
+    dietary: 'Veg',
     name: 'Avocado And Nuts',
     description: 'Avacado, Milk, Mix Nuts, Honey, Almond Flakes',
     price: '₹240',
@@ -328,6 +367,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'beverage-04',
     category: 'Beverages / Whole Day',
+    dietary: 'Veg',
     name: 'Banana And Peanut',
     description: 'Banana, Milk, Honey, Peanut Butter,',
     price: '₹220',

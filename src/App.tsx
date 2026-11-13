@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 import { useMemo, useState, type FormEvent, type ReactNode } from 'react'
 import { Link, NavLink, Route, Routes } from 'react-router-dom'
-import { menuCategories, menuItems, type MenuCategory } from './data/menu'
+import { menuCategories, menuItems, type MenuCategory, type MenuDietary } from './data/menu'
 
 const logoUrl = '/LOGO.svg'
 
@@ -313,10 +313,16 @@ function StoryPage() {
 
 function MenuPage() {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>('Pizza')
+  const [activeDietary, setActiveDietary] = useState<'All' | MenuDietary>('All')
 
   const visibleItems = useMemo(
-    () => menuItems.filter((item) => item.category === activeCategory),
-    [activeCategory],
+    () =>
+      menuItems.filter(
+        (item) =>
+          item.category === activeCategory &&
+          (activeDietary === 'All' || item.dietary === activeDietary),
+      ),
+    [activeCategory, activeDietary],
   )
 
   return (
@@ -333,21 +339,46 @@ function MenuPage() {
       </Reveal>
 
       <div className="sticky top-20 z-40 mt-10 bg-warmIvory py-3">
-        <div className="flex flex-wrap gap-3">
-          {menuCategories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              onClick={() => setActiveCategory(category)}
-              className={`rounded-full border px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.2em] transition ${
-                activeCategory === category
-                  ? 'border-fornoBlue bg-fornoBlue text-white'
-                  : 'border-charcoal/15 bg-white text-charcoal hover:border-fornoBlue hover:text-fornoBlue'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+        <div className="flex flex-nowrap items-center gap-2">
+          <div className="min-w-0 flex-1 overflow-x-auto">
+            <div className="flex w-max flex-nowrap gap-1.5">
+            {menuCategories.map((category) => (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setActiveCategory(category)}
+                className={`shrink-0 rounded-full border px-2.5 py-2 font-sans text-[10px] font-semibold uppercase tracking-[0.08em] transition sm:px-3 ${
+                  activeCategory === category
+                    ? 'border-fornoBlue bg-fornoBlue text-white'
+                    : 'border-charcoal/15 bg-white text-charcoal hover:border-fornoBlue hover:text-fornoBlue'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+            </div>
+          </div>
+          <div
+            role="group"
+            aria-label="Filter menu by dietary preference"
+            className="flex shrink-0 items-center gap-2"
+          >
+            {(['All', 'Veg', 'Non-Veg'] as const).map((dietary) => (
+              <button
+                key={dietary}
+                type="button"
+                aria-pressed={activeDietary === dietary}
+                onClick={() => setActiveDietary(dietary)}
+                className={`rounded-full border px-2.5 py-2 font-sans text-[10px] font-semibold uppercase tracking-[0.08em] transition sm:px-3 ${
+                  activeDietary === dietary
+                    ? 'border-fornoBlue bg-fornoBlue text-white'
+                    : 'border-charcoal/15 bg-white text-charcoal hover:border-fornoBlue hover:text-fornoBlue'
+                }`}
+              >
+                {dietary}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -365,6 +396,11 @@ function MenuPage() {
             </article>
           </Reveal>
         ))}
+        {visibleItems.length === 0 && (
+          <p className="py-8 font-sans text-base text-charcoal/75">
+            No {activeDietary === 'Non-Veg' ? 'non-veg' : 'veg'} items in this category.
+          </p>
+        )}
       </div>
     </section>
   )
