@@ -163,10 +163,10 @@ function HomePage() {
     <div className="home-campaign">
       <div className="campaign-shell">
         <section className="campaign-hero">
-          <img className="campaign-food" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=90" alt="Freshly baked Ratina Forno pizza topped with basil" />
+          <img className="campaign-food" src="/hero-banner.jpg" alt="Freshly baked Ratina Forno pizza topped with basil" />
           <div className="campaign-wash" />
           <div className="campaign-copy">
-            <p>Authentic food. Honest ingredients.</p>
+            <p>AUTHENTIC NEOPOLITAN PIZZA</p>
             <h1><span className="campaign-headline-line">GOOD DOUGH.</span><span>GOOD FIRE.</span></h1>
             <div className="campaign-subtitle">MADE FOR<br />SHARING</div>
             <Link to="/menu" className="campaign-order">Explore the menu <ArrowUpRight size={18} /></Link>
@@ -612,7 +612,7 @@ function Footer() {
           <div>
             <img src={logoUrl} alt="Ratina Forno logo" className="h-16 w-auto" />
             <p className="mt-4 max-w-xs font-sans text-base leading-relaxed text-charcoal/75">
-              Authentic food. Honest ingredients. Good fire.
+              AUTHENTIC NEOPOLITAN PIZZA Good fire.
             </p>
           </div>
 
