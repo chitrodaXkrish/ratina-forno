@@ -312,7 +312,7 @@ function StoryPage() {
 }
 
 function MenuPage() {
-  const [activeCategory, setActiveCategory] = useState<MenuCategory>('Pizzas')
+  const [activeCategory, setActiveCategory] = useState<MenuCategory>('Pizza')
 
   const visibleItems = useMemo(
     () => menuItems.filter((item) => item.category === activeCategory),
@@ -332,43 +332,36 @@ function MenuPage() {
         </div>
       </Reveal>
 
-      <div className="mt-10 flex flex-wrap gap-3">
-        {menuCategories.map((category) => (
-          <button
-            key={category}
-            type="button"
-            onClick={() => setActiveCategory(category)}
-            className={`rounded-full border px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.2em] transition ${
-              activeCategory === category
-                ? 'border-fornoBlue bg-fornoBlue text-white'
-                : 'border-charcoal/15 bg-white text-charcoal hover:border-fornoBlue hover:text-fornoBlue'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
+      <div className="sticky top-20 z-40 mt-10 bg-warmIvory py-3">
+        <div className="flex flex-wrap gap-3">
+          {menuCategories.map((category) => (
+            <button
+              key={category}
+              type="button"
+              onClick={() => setActiveCategory(category)}
+              className={`rounded-full border px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.2em] transition ${
+                activeCategory === category
+                  ? 'border-fornoBlue bg-fornoBlue text-white'
+                  : 'border-charcoal/15 bg-white text-charcoal hover:border-fornoBlue hover:text-fornoBlue'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 divide-y divide-charcoal/15 border-y border-charcoal/15">
         {visibleItems.map((item, index) => (
           <Reveal key={item.id} delay={index * 0.05}>
-            <article className="group overflow-hidden rounded-[2rem] border border-charcoal/10 bg-white shadow-[0_20px_70px_rgba(25,25,25,0.04)]">
-              <div className="overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
-                />
+            <article className="py-6 sm:py-7">
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="font-display text-2xl leading-tight text-charcoal sm:text-3xl">{item.name}</h3>
+                <span className="shrink-0 pt-1 font-sans text-lg font-semibold uppercase tracking-[0.18em] text-fornoBlue">
+                  {item.price}
+                </span>
               </div>
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-display text-3xl leading-none text-charcoal">{item.name}</h3>
-                  <span className="font-sans text-sm font-semibold uppercase tracking-[0.18em] text-fornoBlue">
-                    {item.price}
-                  </span>
-                </div>
-                <p className="mt-4 font-sans text-base leading-relaxed text-charcoal/75">{item.description}</p>
-              </div>
+              <p className="mt-2 font-sans text-base leading-relaxed text-charcoal/75">{item.description}</p>
             </article>
           </Reveal>
         ))}
